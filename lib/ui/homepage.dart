@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: MediaQuery.of(context).size.height * 0.2,
+        toolbarHeight: MediaQuery.of(context).size.height * 0.15,
         backgroundColor: Colors.black,
         centerTitle: true,
         elevation: 10,
@@ -60,10 +60,23 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.black,
       body: Column(
         children: [
-          TextField(
-            decoration: InputDecoration(
-                border: OutlineInputBorder(), labelText: "enter"),
-          )
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              style: TextStyle(color: Colors.white),
+              decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.search,
+                    color: Colors.white,
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white, width: 1.0)),
+                  hintText: 'pesquisar',
+                  hintStyle: TextStyle(color: Colors.white),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white, width: 1.0))),
+            ),
+          ),
         ],
       ),
     );
